@@ -50,12 +50,20 @@ namespace MVCAppointment.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,ptid,specid,docid,dt")] Appointment appointment)
+        public ActionResult Create([Bind(Include = "id,ptid,specid,docid,sTime,eTime")] Appointment appointment)
         {
             if (ModelState.IsValid)
             {
-                db.Appointment.Add(appointment);
-                db.SaveChanges();
+                bool check = db.Appointment.Where(x => x.docid == appointment.docid && x.sTime <= appointment.sTime && x.eTime >= appointment.eTime).Count() > 0;
+                if (!check)
+                {
+                    db.Appointment.Add(appointment);
+                    db.SaveChanges();
+                }
+                else
+                {
+                    TempData["msg"] = "Already appointment booked for this time range";
+                }
                 return RedirectToAction("Index");
             }
 

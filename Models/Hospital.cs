@@ -67,7 +67,8 @@ namespace MVCAppointment.Models
         [ForeignKey("doc")]
         public int docid { get; set; }
         public AddDoctor doc { get; set; }
-        public DateTime dt { get; set; }
+        public DateTime sTime { get; set; }
+        public DateTime eTime { get; set; }
 
     }
     public class HospitalContext : DbContext

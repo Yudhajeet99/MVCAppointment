@@ -108,3 +108,4 @@ C:\Users\adrij\source\repos\MVCAppointment\obj\Debug\MVCAppointment.pdb
 C:\Users\adrij\source\repos\MVCAppointment\obj\Debug\MVCAppointment.Migrations.InitialCreate.resources
 C:\Users\adrij\source\repos\MVCAppointment\obj\Debug\MVCAppointment.csproj.GenerateResource.cache
 C:\Users\adrij\source\repos\MVCAppointment\obj\Debug\MVCAppointment.Migrations.first.resources
+C:\Users\adrij\source\repos\MVCAppointment\obj\Debug\MVCAppointment.csproj.AssemblyReference.cache
